@@ -52,3 +52,8 @@ def notes2():
             flash('Note added!', category='success')
 
     return render_template("notes2.html", user=current_user)
+
+@views.route('/checklist', methods=['GET', 'POST'])
+@login_required
+def Labchecklist():
+    return render_template("Labchecklist.html", user=current_user)

@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Checkout Checklist</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+    </style>
+    </head>
+    <body>
+    <h1>Lab Checkout Checklist</h1>
+    <h2>Software Checkout</h2>
+    <ul>
+      <li><input type="checkbox"> Software Setup</li>
+      <li><input type="checkbox"> Software Config</li>
+    </ul>
+    <h2>Inspection</h2>
+    <ul>
+      <li><input type="checkbox"> No loose hardware</li>
+      <li><input type="checkbox"> No loose cables</li>
+      <li><input type="checkbox"> Nothing in contact with props</li>
+      <li><input type="checkbox"> Ensure props are removed</li>
+      <li><input type="checkbox"> Ensure tx mode switch AS is set to stabilize</li>
+    </ul>
+    <h2>Power On</h2>
+    <ul>
+      <li><input type="checkbox"> Power transmitter</li>
+      <li><input type="checkbox"> Power AV</li>
+      <li><input type="checkbox"> Do not move v until gyro calibration complete</li>
+      <li><input type="checkbox"> RED and BLUE flashing lights during gyro calibration</li>
+    </ul>
+    <h2>Pre-arm Checks</h2>
+    <ul>
+      <li><input type="checkbox"> Pre-arm - Press safety switch until solid</li>
+      <li><input type="checkbox"> Arm (Tx)</li>
+      <li><input type="checkbox"> Check motor direction</li>
+      <li><input type="checkbox"> Disarm (Tx)</li>
+      <li><input type="checkbox"> Turn off AV and Tx</li>
+    </ul>
+    <h2>Final Checks</h2>
+    <ul>
+      <li><input type="checkbox"> Attach propellers</li>
+      <li><input type="checkbox"> Check direction</li>
+      <li><input type="checkbox"> Check clearance</li>
+      <li><input type="checkbox"> Check free spinning</li>
+      <li><input type="checkbox"> Check tight prop nuts</li>
+      <li><input type="checkbox"> Check secure motor screws</li>
+    </ul>
+    </body>
+    </html>
+    
+    {% endblock %}

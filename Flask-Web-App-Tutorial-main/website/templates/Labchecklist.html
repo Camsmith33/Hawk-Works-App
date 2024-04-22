@@ -24,6 +24,23 @@
         margin-right: 5px;
       }
     </style>
+    <script>
+    function validateForm() {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      var checked = 0;
+      checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+          checked++;
+        }
+      });
+      if (checked === checkboxes.length) {
+        return true;
+      } else {
+        alert("Please check all checkboxes before submitting.");
+        return false;
+      }
+    }
+    </script>
     </head>
     <body>
     <h1>Lab Checkout Checklist</h1>
@@ -32,6 +49,7 @@
       <li><input type="checkbox"> Software Setup</li>
       <li><input type="checkbox"> Software Config</li>
     </ul>
+    
     <h2>Inspection</h2>
     <ul>
       <li><input type="checkbox"> No loose hardware</li>
@@ -40,6 +58,7 @@
       <li><input type="checkbox"> Ensure props are removed</li>
       <li><input type="checkbox"> Ensure tx mode switch AS is set to stabilize</li>
     </ul>
+    
     <h2>Power On</h2>
     <ul>
       <li><input type="checkbox"> Power transmitter</li>
@@ -47,6 +66,7 @@
       <li><input type="checkbox"> Do not move v until gyro calibration complete</li>
       <li><input type="checkbox"> RED and BLUE flashing lights during gyro calibration</li>
     </ul>
+    
     <h2>Pre-arm Checks</h2>
     <ul>
       <li><input type="checkbox"> Pre-arm - Press safety switch until solid</li>
@@ -55,6 +75,7 @@
       <li><input type="checkbox"> Disarm (Tx)</li>
       <li><input type="checkbox"> Turn off AV and Tx</li>
     </ul>
+    
     <h2>Final Checks</h2>
     <ul>
       <li><input type="checkbox"> Attach propellers</li>
@@ -64,6 +85,11 @@
       <li><input type="checkbox"> Check tight prop nuts</li>
       <li><input type="checkbox"> Check secure motor screws</li>
     </ul>
+    
+    <form onsubmit="return validateForm()">
+      <input type="submit" value="Submit">
+    </form>
+    
     </body>
     </html>
     

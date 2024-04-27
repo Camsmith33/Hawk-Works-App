@@ -5,25 +5,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firmware Setup Checklist</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      h1 {
-        text-align: center;
-      }
-      ul {
-        list-style-type: none;
-      }
-      li {
-        margin-bottom: 10px;
-      }
-      input[type="checkbox"] {
-        margin-right: 5px;
-      }
-    </style>
+    <title>Firmware Setup Checklist Drone 1</title>
     <script>
     function validateForm() {
       var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -43,7 +25,7 @@
     </script>
     </head>
     <body>
-    <h1>Firmware Setup Checklist</h1>
+    <h1>Drone 1 Firmware Setup Checklist</h1>
     <h2>Firmware Setup</h2>
     <ul>
       <li><input type="checkbox"> Firmware</li>
@@ -94,13 +76,17 @@
       <li><input type="checkbox"> RC7_OPTION</li>
       <li><input type="checkbox"> RSS1_TYPE</li>
       <li><input type="checkbox"> SERIAL_1_PROTOCAL</li>
-    </ul>
-    
-    <form onsubmit="return validateForm()">
-      <input type="submit" value="Submit">
-    </form>
-    
-    </body>
-    </html>
+      </ul>
+      <form method="POST">
+        <h2>Check-out Notes</h2>
+        Input Notes <br>
+        <textarea name="log" id="log" class="form-control"></textarea>
+        <br />
+        <div align="center">
+          <button type="submit" class="btn btn-primary">Check-out Drone</button>
+        </div>
+      </form>
+      </body>
+      </html>
     
     {% endblock %}

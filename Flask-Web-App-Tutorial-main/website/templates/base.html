@@ -31,16 +31,20 @@
         <div class="navbar-nav">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="checkout" href="/checkout">Checkout Drone</a>
+          <a class="nav-item nav-link" id="checkin" href="/checkin">Checkin Drone</a>
+          <a class="nav-item nav-link" id="history" href="/history">History Log</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-          <a class="nav-item nav-link" id="logout" href="/notes2">Checkout Drone</a>
           {% else %}
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Create Account</a>
           {% endif %}
         </div>
-      </div>
+          <div class="ml-auto">
+            <img src="{{url_for('static', filename='hawk_logo.png')}}" alt="Viterbo Logo" width="65px">
+          </div>
+        </div>
     </nav>
-
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==
     'error' %}

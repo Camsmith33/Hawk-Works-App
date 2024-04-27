@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+ 
+  <link rel="Notes" href="Notes.css">
+ 
+ <h1>
+  <img src="{{url_for('static', filename='Viterbo_Logo.png')}}" alt="Viterbo Logo" width=200px><br>
+  Check Out Drone
+ </h1>
+ <h2>
+ <p> 
+ Click on the button underneath the drone you want to check-out. You will then be asked to fill out some information about your flight plan.
+ </p>
+ </h2>
+ 
+ 
+ <div class="Drone">
+  <img src="{{url_for('static', filename='drone_stock.png')}}" alt="Drone 1" width=500px><br>
+  <a href="/drone1_release"><button class="btn btn-primary">Drone 1</button></a><br>
+  <p2> Drone 1 is ...</p2> <br>
+  <img src="{{url_for('static', filename='drone_stock.png')}}" alt="Drone 2" width=500px><br>
+  <a href="/drone2_release"><button class="btn btn-primary">Drone 2</button></a><br>
+  <p2> Drone 2 is ...</p2> <br>
+  <img src="{{url_for('static', filename='drone_stock.png')}}" alt="Drone 3" width=500px><br>
+  <a href="/drone3_release"><button class="btn btn-primary">Drone 3</button></a><br>
+  <p2> Drone 3 is ...</p2> <br>
+  <img src="{{url_for('static', filename='drone_stock.png')}}" alt="Drone 4" width=500px><br>
+  <a href="/drone4_release"><button class="btn btn-primary">Drone 4</button></a><br>
+  <p2> Drone 4 is ...</p2> <br>
+ </div>
+ <!-- CSS -->
+ <style>
+ h1 {
+ text-align: center;
+ }
+ 
+ p {
+ font-size: 20px;
+ font-weight: bold;
+ text-align: center;
+ }
+ .Drone {
+ width: 100%;
+ text-align: center;
+ }
+ </style>
+ 
+  {% endblock %}

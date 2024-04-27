@@ -1,0 +1,92 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firmware Setup Checklist Drone 2</title>
+  <script>
+  function validateForm() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var checked = 0;
+    checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        checked++;
+      }
+    });
+    if (checked === checkboxes.length) {
+      return true;
+    } else {
+      alert("Please check all checkboxes before submitting.");
+      return false;
+    }
+  }
+  </script>
+  </head>
+  <body>
+  <h1>Drone 2 Firmware Setup Checklist</h1>
+  <h2>Firmware Setup</h2>
+  <ul>
+    <li><input type="checkbox"> Firmware</li>
+    <li><input type="checkbox"> Frame Type</li>
+    <li><input type="checkbox"> Transmitter Calibration</li>
+    <li><input type="checkbox"> Roll Direction</li>
+    <li><input type="checkbox"> Pitch Direction</li>
+    <li><input type="checkbox"> Yaw Direction</li>
+    <li><input type="checkbox"> Aux_1/SA_Stabilize</li>
+    <li><input type="checkbox"> AUX_1_ALT_HOLD</li>
+    <li><input type="checkbox"> AUX_1_POS_HOLD</li>
+    <li><input type="checkbox"> Accelerometer Calibration</li>
+    <li><input type="checkbox"> Compass Calibration</li>
+    <li><input type="checkbox"> Motor Direction</li>
+  </ul>
+  
+  <h2>Firmware Configuration</h2>
+  <ul>
+    <li><input type="checkbox"> ACT_ACCEL_P_MAX</li>
+    <li><input type="checkbox"> ACT_ACCEL_R_MAX</li>
+    <li><input type="checkbox"> ACT_ACCEL_Y_MAX</li>
+    <li><input type="checkbox"> ATC_RAT_PIT_FLTD</li>
+    <li><input type="checkbox"> ATC_RAT_PIT_FLTT</li>
+    <li><input type="checkbox"> ATC_RAT_PIT_FLTT</li>
+    <li><input type="checkbox"> ATC_RAT_RLL_FLTD</li>
+    <li><input type="checkbox"> ATC_RAT_YAW_FLTE</li>
+    <li><input type="checkbox"> ATC_RAT_YAW_FLTT</li>
+    <li><input type="checkbox"> ATC_THR_MIND_MAN</li>
+    <li><input type="checkbox"> BATT_ARM_VOLT</li>
+    <li><input type="checkbox"> BATT_CRT_VOLT</li>
+    <li><input type="checkbox"> BATT_FS_CRT_ACT</li>
+    <li><input type="checkbox"> BATT_FS_LOW_ACT</li>
+    <li><input type="checkbox"> BATT_LOW_VOLT</li>
+    <li><input type="checkbox"> FLTMODE1</li>
+    <li><input type="checkbox"> FLTMODE4</li>
+    <li><input type="checkbox"> FRAME_CLASS</li>
+    <li><input type="checkbox"> FS_THR_ENABLE</li>
+    <li><input type="checkbox"> INS_GYRO_FILTER</li>
+    <li><input type="checkbox"> MOB_BAT_VOLT_MAX</li>
+    <li><input type="checkbox"> MOB_BAT_VOLT_MIN</li>
+    <li><input type="checkbox"> MOT_HOVER_LEARN</li>
+    <li><input type="checkbox"> MOT_SPIN_ARM</li>
+    <li><input type="checkbox"> MOT_SPIN_MIN</li>
+    <li><input type="checkbox"> MOT_THST_EXPO</li>
+    <li><input type="checkbox"> MOT_THST_HOVER</li>
+    <li><input type="checkbox"> TC_OPTIONS</li>
+    <li><input type="checkbox"> RC6_OPTION</li>
+    <li><input type="checkbox"> RC7_OPTION</li>
+    <li><input type="checkbox"> RSS1_TYPE</li>
+    <li><input type="checkbox"> SERIAL_1_PROTOCAL</li>
+    </ul>
+    <form method="POST" action="{{ url_for('views.drone2_checkout') }}">
+      <h2>Check-out Notes</h2>
+      Input Notes <br>
+      <textarea name="log" id="log" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Check-out Drone</button>
+      </div>
+    </form>
+    </body>
+    </html>
+  
+  {% endblock %}

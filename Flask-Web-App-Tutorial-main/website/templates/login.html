@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
 %}
 <form method="POST">
+  <h1>
+    <img src="{{url_for('static', filename='Viterbo_Logo.png')}}" alt="Viterbo Logo" width=200px>
+  </h1>
   <h3 align="center">Hawk Works Drone App Login</h3>
   <div class="form-group">
     <label for="email">Email Address</label>
@@ -25,4 +28,9 @@
   <br />
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
+<style>
+  h1 {
+    text-align: center;
+    }
+    </style>
 {% endblock %}

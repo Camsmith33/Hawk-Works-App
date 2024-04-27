@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Release Form Drone 1</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .title {
+        text-align: center;
+      }
+    </style>
+<script>
+  function validateForm() {
+    var textFields = document.querySelectorAll('input[name="drone_release"]');
+    var checkboxes1 = document.querySelectorAll('input[name="maintenance_actions"]');
+    var hasValue = true;
+    var checked1 = true;
+
+    // Check if all text fields have a value
+    textFields.forEach(function(input) {
+      if (input.value === '') {
+        hasValue = false;
+      }
+    });
+
+    // Check if all checkboxes in the maintenance actions group are checked
+    checkboxes1.forEach(function(checkbox) {
+      if (!checkbox.checked) {
+        checked1 = false;
+      }
+    });
+
+    if (hasValue && checked1) {
+      // Redirect to the specified page after validation passes
+      location.href = "/drone1_check";
+      return true;
+    } else {
+      alert("Please fill out all sections before submitting.");
+      return false;
+    }
+  }
+</script>
+  </head>
+  <body>
+    <h1>Drone 1 Release Form</h1>
+    <ul>
+      <li><input type="text" name="drone_release"> AV</li>
+      <li><input type="text" name="drone_release"> Radio</li>
+      <li><input type="text" name="drone_release"> AV Battery</li>
+      <li><input type="text" name="drone_release"> TX Battery</li>
+      <li><input type="checkbox" name="maintenance_actions"> Maintenance Action Forms</li>
+      <li><input type="checkbox" name="maintenance_actions"> Software Configuration</li>
+      <li><input type="checkbox" name="maintenance_actions"> TX Radio Configuration</li>
+    </ul>
+      <button class="btn btn-primary" onclick="return validateForm()">
+        Continue
+      </button>
+  </body>
+  </html>
+  
+{% endblock %}

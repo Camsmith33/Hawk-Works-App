@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <h1 align="center">Drone 2 Check-in</h1>
+    <h3 align="center"> Please put any check-in notes below.</h3>
+    <form method="POST">
+      Input Notes <br>
+      <textarea name="log" id="log" class="form-control"></textarea>
+      <br />
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Check-in Drone</button>
+      </div>
+    </form>
+    {% endblock %}

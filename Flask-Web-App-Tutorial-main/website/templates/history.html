@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Checkout History{% endblock %}
+{% block content %}
+<h1 align="center">Checkout History</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for log_entry in logs %}
+  <li class="list-group-item">
+    Action: {{ log_entry.action }} <br>
+    Drone: {{ log_entry.drone }} <br>
+    User: {{ log_entry.full_name }} <br>
+    Date: {{ log_entry.date }} <br>
+    Notes: {{ log_entry.note }}
+  </li>
+  {% endfor %}
+</ul>
+<style>
+  .li {
+    border: 10px black;
+  }
+</style>
+{% endblock %}
+
+    

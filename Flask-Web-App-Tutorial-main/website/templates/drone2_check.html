@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firmware Setup Checklist Drone 2</title>
+  <!--checks to see if all boxes have been checked, but not currently in use-->
   <script>
   function validateForm() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -77,7 +78,7 @@
     <li><input type="checkbox"> RSS1_TYPE</li>
     <li><input type="checkbox"> SERIAL_1_PROTOCAL</li>
     </ul>
-    <form method="POST" action="{{ url_for('views.drone2_checkout') }}">
+    <form method="POST" action="{{ url_for('views.drone2_checkout') }}"> <!--Routes to Specific part of view.py-->
       <h2>Check-out Notes</h2>
       Input Notes <br>
       <textarea name="log" id="log" class="form-control"></textarea>

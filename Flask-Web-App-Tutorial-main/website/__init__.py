@@ -19,10 +19,19 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note
+    from .models import User, Note, Drone, Drone_Log
     
     with app.app_context():
         db.create_all()
+        drone1 = Drone(name="Drone 1", status="Available")
+        drone2 = Drone(name="Drone 2", status="Available")
+        drone3 = Drone(name="Drone 3", status="Available")
+        drone4 = Drone(name="Drone 4", status="Available")
+        db.session.add(drone1)
+        db.session.add(drone2)
+        db.session.add(drone3)
+        db.session.add(drone4)
+        db.session.commit()
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
